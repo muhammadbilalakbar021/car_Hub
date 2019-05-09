@@ -1,0 +1,8 @@
+{
+    "name":"CarHub.com",
+    "Technologies" :{
+        "frontend":"mdBootstrap",
+        "Backend":"NodeJs",
+        "Database":"Mongoose"
+    }
+}

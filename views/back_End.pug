@@ -1,0 +1,201 @@
+doctype html
+html
+  head
+    title=Title
+    link(rel="stylesheet", href="/bootstrap/bootstrap.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
+  script( type='text/javascript').
+      $(document).ready(function(){
+        console.log("Document eady");
+          function tab(evt, cityName)
+          {
+            console.log("Document eady");
+            var i,tabContent,tabLink;
+            tabContent=document.getElementsByClassName("tabcontent");
+            for(i=0;i<tabContent.length;i++)
+              {
+                tabContent[i].style.display="none";
+              }
+            tabLink=document.getElementsByClassName("tablink");
+            for(i=0;i<tabLink.length;i++)
+              {
+                tabLink[i].className=tabLink[i].className.replace("active","");
+              }
+            document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className
+          }
+   });
+  
+  body
+    
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">CarHub</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link tablinks" onClick="tab(event, 'EnterData')" href="#EnterData">Enter Data <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link tablinks" onClick="tab(event, 'GetData')" href="#GetData">Get Data <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link tablinks" onClick="tab(event, 'categoryForm')" href="#UpdateData">Update Data <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link tablinks" onClick="tab(event, 'categoryForm')" href="#DeleteData">Delete Data <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+
+   
+
+    <div id="EnterData" class="">
+      <h1>Enter Data</h1>
+
+    <div class="container">
+      <form method="POST" action="http://localhost:3000/car/postdata">
+      <div>
+        <label for="car_Company">Car Company</label>
+        <input type="text" class="form-control" id="car_Company" name="car_Company" placeholder="Enter Name of Company">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="car_Name">Car Name</label>
+        <input type="text" class="form-control" id="car_Name"  name="car_Name" placeholder="Enter Name of Car">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="car_Price">Car Price</label>
+        <input type="text" class="form-control" id="car_Price"  name="car_Price" placeholder="Enter The Price">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="model">Model</label>
+        <input type="text" class="form-control" id="model"  name="model" placeholder="Enter the Name of Model">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="generation">Generation</label>
+        <input type="text" class="form-control" id="generation"  name="generation" placeholder="Enter The Generation">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="pros">Pros</label>
+        <input type="text" class="form-control" id="pros"  name="pros" placeholder="Enter Pros">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="cons">Cons</label>
+        <input type="text" class="form-control" id="cons" name="cons"  placeholder="Enter Cons">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="review">Review</label>
+        <input type="text" class="form-control" id="review"  name="review" placeholder="Enter Review ">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="overview">Overview</label>
+        <input type="text" class="form-control" id="overview" name="overview"  placeholder="Enter Overview of Car">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="horsepower">HorsePower</label>
+        <input type="text" class="form-control" id="horsepower" name="horsepower"  placeholder="Enter HorsePower....">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="torque">Torque</label>
+        <input type="text" class="form-control" id="torque" name="torque"  placeholder="Enter Torque">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="topspeed">TopSpeed</label>
+        <input type="text" class="form-control" id="topspeed" name="topspeed" placeholder="Enter TopSpeed....">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="zeroto60">0 to 60</label>
+        <input type="text" class="form-control" id="zeroto60"  name="zeroto60" placeholder="Enter 0 ot 6O Duration">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <br>
+    <br>
+    </div>
+    
+    
+       <div id="GetData">
+         <h1>Get Data</h1>
+         <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">car_Company</th>
+              <th scope="col">car_Name</th>
+              <th scope="col">car_Price</th>
+              <th scope="col">model</th>
+              <th scope="col">generation</th>
+              <th scope="col">pros</th>
+              <th scope="col">cons</th>
+              <th scope="col">overview</th>
+              <th scope="col">horsepower</th>
+              <th scope="col">torque</th>
+              <th scope="col">topspeed</th>
+              <th scope="col">zeroto60</th>
+            </tr>
+          </thead>
+          <tbody>
+            -var n = 1;
+            each item in items
+              <tr>
+                <th scope="row">#{n++}</th>
+                  td=item.car_Company
+                  td=item.car_Name
+                  td=item.car_Price
+                  td=item.model
+                  td=item.generation
+                  td=item.pros
+                  td=item.cons
+                  td=item.overview
+                  td=item.horsepower
+                  td=item.torque
+                  td=item.topspeed
+                  td=item.zeroto60
+            </tr>
+          </tbody>
+          </table>
+       </div>
+
+           

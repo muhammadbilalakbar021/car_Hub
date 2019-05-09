@@ -1,0 +1,17 @@
+{
+  "name": "carhub.com",
+  "version": "1.0.0",
+  "description": "This is Node PRject with MongoDB and MDBootstrap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Muhammad Bilal Akbar",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.3.1",
+    "mdbootstrap": "^4.7.3",
+    "slick-carousel": "^1.8.1"
+  }
+}

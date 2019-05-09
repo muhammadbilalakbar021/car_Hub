@@ -1,0 +1,16 @@
+{
+    "name":"Muhammad Bilal Akbar",
+    "rollno":"FA17-BSE-068",
+    "University":"Comsats University",
+    "techs":{
+        "mailAddress":"muhammadbilalakbar021@gmail.com",
+        "contact":"032447006068"
+    },
+    "Residential":"Lahore",
+    "projectName":"CarHub.com",
+    "Technologies" :{
+        "frontend":"mdBootstrap",
+        "Backend":"NodeJs",
+        "Database":"Mongoose"
+    }
+}
