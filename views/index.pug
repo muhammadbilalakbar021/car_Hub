@@ -26,9 +26,9 @@ script( type='text/javascript').
 					url: "/car/"+load,
 					dataType: 'json',
 					success: (data) => {
-						$('#carModel').html("");						
+						$('#carMod').html("");						
 						$.each(data, function(key, value) {
-						$('#carModel').append($("<option></option>")
+						$('#carMod').append($("<option></option>")
 							 .attr("value",value)
 							 .text(value)); 
 						});
@@ -214,7 +214,7 @@ body
 									<option value="" href="#">Vauxhall</option>
 
 								</select>
-								<select class="browser-default custom-select select_model edit pull-right " id="carModel" name="carModel" >
+								<select class="browser-default custom-select select_model edit pull-right " id="carMod" name="carMod" >
 									<option value="none" href="#">Select Model</option>	
 								</select>
 						</div>

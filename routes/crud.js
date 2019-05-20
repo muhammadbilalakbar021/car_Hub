@@ -48,7 +48,7 @@ const carSchema=new mongoose.Schema({
 })
 
 // const carModel=mongoose.model('carModel',carSchema);
-const carModel=mongoose.model('carModeex',carSchema);
+const carModel=mongoose.model('carModee',carSchema);
 
 
 //App Request this url for get data
@@ -93,20 +93,22 @@ router.post('/getCar', (req, resp) => {
     
     async function getCarDetail()
     {
-        console.log("Event has been called" + req.body);   
+        console.log("Event has been called");   
         carCompany=req.body.carCompany;
-        //carModel=req.body.carModel;
+        carMod=req.body.carMod;
 
-        console.log(carCompany + "************************");
-        // console.log(carModel);
-        const car_Obj_Result = await carModel.find({car_Company:req.body.carCompany });
+        // console.log(carCompany + "************************");
+        // console.log(carMod);
+        const items = await carModel.find({car_Company:req.body.carCompany ,car_Name:req.body.carMod });
+        var result=[];
         // car_Obj_Result.forEach(function(doc,err)
         //     {
-        //         result.push(doc.car_Name)
+        //         result.push(doc)
         //     })
-        console.log(car_Obj_Result)
+        console.log(items.car_Price)
         // resp.render('index',{items : result})
-        resp.send(car_Obj_Result)
+        // console.log({items:car_Obj_Result});
+        resp.render('car',{items })
     }
     getCarDetail();
 
@@ -150,9 +152,8 @@ router.post('/postdata', (req, resp) => {
     {
         result.push(doc)
     })
-    // console.log(result)
+    console.log(result)
     resp.render('back_End',{items : result})
-
 }   
     carObjectCreating();
 })
